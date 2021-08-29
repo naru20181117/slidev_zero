@@ -105,7 +105,7 @@ http://naruhero.site/
 
 ### Slidevでやってやりたかった
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">mark downでスライドを作れるサービスを見つけて<br>おもちゃを与えられた子供状態<br>けど意外と拡張カスタマイズは難しいのかも。。<br><br>あと公式も変更をかなり入れてるみたいで<br>これから注目したいものが増えた👀<a href="https://t.co/QxpTl7TIYT">https://t.co/QxpTl7TIYT</a> <a href="https://t.co/UjQ7XC2E5u">pic.twitter.com/UjQ7XC2E5u</a></p>&mdash; なる(ハチドリの一滴)個人開発の人 (@1026NT) <a href="https://twitter.com/1026NT/status/1430131406961659908?ref_src=twsrc%5Etfw">August 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<Tweet id="1430131406961659908"/>
 
 ---
 
