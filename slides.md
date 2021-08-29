@@ -46,7 +46,7 @@ https://qiita.com/naruqiita/items/7888b931beeaaa6b39e7
 
 ---
 
-### 理由
+### Qiitaスライドを選んできた理由
 
 ```
 LT会に参加して見られる良い資料の多くは
@@ -68,7 +68,7 @@ Qiitaのスライドモードを使うことによって
 
 #### 例
 
-![スクリーンショット 2021-08-28 20.11.28.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/22706097-2718-7314-b93f-697eafca2f17.png)
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/22706097-2718-7314-b93f-697eafca2f17.png" class="img-large">
 
 ---
 
@@ -85,7 +85,9 @@ Qiitaのスライドモードを使うことによって
 |:-:|:-:|
 |Qiita|[Qiitaスライド記事](https://qiita.com/naruqiita/items/78afe211b66c44894f5d)|
 |reveal.js|[ブログに付属させたサイト](https://naruhero-blog-slide.netlify.app/?entry_id=2JPpN7S7eEDa0KcVxsBI87)|
-|Slidev|url|
+|Slidev|https://slidev-introduction-naru.netlify.app/|
+
+※同じマークダウン形式記事をそれぞれ投稿
 
 ---
 
@@ -103,7 +105,7 @@ http://naruhero.site/
 
 ### Slidevでやってやりたかった
 
-<Tweet id="1430131406961659908"/>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">mark downでスライドを作れるサービスを見つけて<br>おもちゃを与えられた子供状態<br>けど意外と拡張カスタマイズは難しいのかも。。<br><br>あと公式も変更をかなり入れてるみたいで<br>これから注目したいものが増えた👀<a href="https://t.co/QxpTl7TIYT">https://t.co/QxpTl7TIYT</a> <a href="https://t.co/UjQ7XC2E5u">pic.twitter.com/UjQ7XC2E5u</a></p>&mdash; なる(ハチドリの一滴)個人開発の人 (@1026NT) <a href="https://twitter.com/1026NT/status/1430131406961659908?ref_src=twsrc%5Etfw">August 24, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ---
 
@@ -143,6 +145,8 @@ http://naruhero.site/
     - 開発期間3日ほどしかなかった
     - リッチに作れるのが良いことだが作り込みが必要
 
+`Slidevはほぼ毎日アップデートされていてbuildをしないような変更に期待`
+
 ---
 
 ### 選ばれたのは`reveal.js`でした
@@ -153,9 +157,10 @@ http://naruhero.site/
 
 ### [reveal.js](https://revealjs.com/)とは
 
-HTMLプレゼンテーションフレームワーク
-マークダウンでも対応をしている
-dependencyとして既存アプリにインストールして使える
+- 最も有名なHTMLプレゼンテーションフレームワーク
+- マークダウンでも対応
+- スライドはPDFでエクスポート
+- dependencyとして**既存アプリにインストールして使える**
 ![revealjs.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/f4484e7b-abdd-0362-3bdb-da83d1362bb8.png)
 [参考](https://revealjs.com/installation/#installing-from-npm)
 
@@ -163,35 +168,35 @@ dependencyとして既存アプリにインストールして使える
 
 ### データ構成
 
-![データ構成.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/e8d68e2b-80e6-6b22-2583-b4aac96b890e.gif)
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/e8d68e2b-80e6-6b22-2583-b4aac96b890e.gif" class="img-large">
 
 ---
 
 #### 悔しいポイント
 
-`ContentfulのMD(マークダウン)`→`reveal.jsのMD読み込み`はできなかった
+`ContentfulのMD(マークダウン)`→`reveal.jsのMD読み込み`はできなかった点
+`ContentfulのMD`→`VueでのMDをHTMLに変換`→`reveal.jsへ読み込み`
 [参考](https://github.com/hakimel/reveal.js/blob/master/plugin/markdown/plugin.js#L37)
 
-`ContentfulのMD`→`VueでのMDをHTMLに変換`→`reveal.jsへ読み込み`
-この実装によりContentfulに内蔵されたHTMLの表示がバグる🤮
+Twitterの埋め込みなどが対応できていない点🤮
+(QiitaやSlidevなら対応できる)
 
 ---
 
 #### 余談
 
-正直マークダウンに拘らなければ
-[Speaker Deck](https://speakerdeck.com/)も良い
+正直マークダウンに拘らなければ[Speaker Deck](https://speakerdeck.com/)も良い
 
 - パワポなどで作った資料をアップロードするだけ
 - SlideShareを使って簡単に埋め込みもできる
 
 ---
 
-### 実際に見てみる
+### [実際に見てみる](http://naruhero.site/blog/6/)
 
-http://naruhero.site/blog/6/
+ブログがクリック先でスライドとして表示される様子
 
-※アップデートしていくため見た目が変わる可能性あり
+<img src="https://i.gyazo.com/b8bf4e95e28bf8c72bfe992c4c8a4e56.gif" class="img-large">
 
 ---
 
@@ -202,9 +207,19 @@ http://naruhero.site/blog/6/
 - Twitterの埋め込みなど対応していないことが少し目立つ
 
 ---
-
 ## 結論
 
 記事とスライド作成を手軽に作成したいなら[Qiita](https://qiita.com/Qiita/items/4ff5873776992f0511d6)
 マークダウンでリッチに書きたいだけなら[Slidev](https://sli.dev/)
 マークダウンで書いてカスタマイズもできるようにするなら[Reveal.js](https://revealjs.com/)
+
+---
+
+## 自己紹介
+
+個人開発について発信しています！
+Twitterもフォローください👏
+[@1026NT](https://twitter.com/1026NT)
+なる
+
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/3db40e7d-3213-be1f-8650-c6ad5dff69c9.jpeg" width="300px">
