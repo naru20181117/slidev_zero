@@ -114,7 +114,6 @@ http://naruhero.site/
 - 2021年5月に発表
 - マークダウンで書けるプレゼンテーションツール
 - `npm init slidev`だけで始められるオープンソース
-- devという名前が入っているように開発者向け
 - Vite、Vue3、WindiCSSで作られる
 
 ---
@@ -161,6 +160,7 @@ http://naruhero.site/
 - マークダウンでも対応
 - スライドはPDFでエクスポート
 - dependencyとして**既存アプリにインストールして使える**
+
 ![revealjs.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/f4484e7b-abdd-0362-3bdb-da83d1362bb8.png)
 [参考](https://revealjs.com/installation/#installing-from-npm)
 
@@ -200,6 +200,14 @@ Twitterの埋め込みなどが対応できていない点🤮
 
 ---
 
+#### 結果メリット
+
+- 変更に強いスライドが作れた
+- ブログが同時に作れて効率化
+- UI自由度が格段に飛躍
+
+---
+
 #### 補足
 
 - Slidevも作られたばかりで毎日のようにアップデートされている
@@ -209,12 +217,11 @@ Twitterの埋め込みなどが対応できていない点🤮
 ---
 ## 結論
 
-記事とスライド作成を手軽に作成したいなら[Qiita](https://qiita.com/Qiita/items/4ff5873776992f0511d6)
-マークダウンでリッチに書きたいだけなら[Slidev](https://sli.dev/)
-マークダウンで書いてカスタマイズもできるようにするなら[Reveal.js](https://revealjs.com/)
+記事とスライド作成を**手軽に作成**したいなら[Qiita](https://qiita.com/Qiita/items/4ff5873776992f0511d6)
+**マークダウンでリッチに**書きたいなら[Slidev](https://sli.dev/)
+別アプリ上で**カスタマイズ**もしたいなら[Reveal.js](https://revealjs.com/)
 
 ---
-
 ## 自己紹介
 
 個人開発について発信しています！
