@@ -18,193 +18,329 @@ info: |
   Learn more at [Sli.dev](https://sli.dev)
 ---
 
-# プレゼン資料使い捨てはMOTTAINAI【エンジニア用のスライド比較】
+# Welcome to Slidev
 
+Presentation slides for developers
+
+<div class="pt-12">
+  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+    Press Space for next page <carbon:arrow-right class="inline"/>
+  </span>
+</div>
+
+<div class="abs-br m-6 flex gap-2">
+  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon:edit />
+  </button>
+  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
+    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-github />
+  </a>
+</div>
+
+
+<!--
+The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+-->
 
 ---
-## 結論
 
-個人ブログをプレゼン用に
-アレンジしたら良かった話
+# What is Slidev?
+
+Slidev is a slides maker and presenter designed for developers, consist of the following features
+
+- 📝 **Text-based** - focus on the content with Markdown, and then style them later
+- 🎨 **Themable** - theme can be shared and used with npm packages
+- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
+- 🤹 **Interactive** - embedding Vue components to enhance your expressions
+- 🎥 **Recording** - built-in recording and camera view
+- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
+- 🛠 **Hackable** - anything possible on a webpage
+
+<br>
+<br>
+
+Read more about [Why Slidev?](https://sli.dev/guide/why)
+
+<!--
+You can have `style` tag in markdown to override the style for the current page.
+Learn more: https://sli.dev/guide/syntax#embedded-styles
+-->
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
 
 ---
 
-### ターゲット
+# Navigation
 
-- LTが好きなエンジニア
-- 情報発信をよくするジニア
-- 自分の活動をストック型にしたいジニア
+Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+
+### Keyboard Shortcuts
+
+|     |     |
+| --- | --- |
+| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
+| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
+| <kbd>up</kbd> | previous slide |
+| <kbd>down</kbd> | next slide |
+
+<!-- https://sli.dev/guide/animations.html#click-animations -->
+<img
+  v-click
+  class="absolute -bottom-9 -left-7 w-80 opacity-50"
+  src="https://sli.dev/assets/arrow-bottom-left.svg"
+/>
+<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
 ---
-
-### 筆者経験
-
-- [LT会の主催者](https://tonihome.connpass.com/)
-- これまでQiitaを使ってLTをしてきた
-
-https://qiita.com/naruqiita/items/7888b931beeaaa6b39e7
-
+layout: image-right
+image: https://source.unsplash.com/collection/94734566/1920x1080
 ---
 
-### 理由
+# Code
 
+Use code snippets and get the highlighting directly![^1]
+
+```ts {all|2|1-6|9|all}
+interface User {
+  id: number
+  firstName: string
+  lastName: string
+  role: string
+}
+
+function updateUser(id: number, update: User) {
+  const user = getUser(id)
+  const newUser = {...user, ...update}  
+  saveUser(id, newUser)
+}
 ```
-LT会に参加して見られる良い資料の多くは
-　その場でしか拝見できずもったいないと思っていた
-Qiitaのスライドモードを使うことによって
-　資料を記事として残せる！
+
+<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+
+[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
+
+<style>
+.footnotes-sep {
+  @apply mt-20 opacity-10;
+}
+.footnotes {
+  @apply text-sm opacity-75;
+}
+.footnote-backref {
+  display: none;
+}
+</style>
+
+---
+
+# Components
+
+<div grid="~ cols-2 gap-4">
+<div>
+
+You can use Vue components directly inside your slides.
+
+We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+
+```html
+<Counter :count="10" />
 ```
 
----
+<!-- ./components/Counter.vue -->
+<Counter :count="10" m="t-4" />
 
-## まだもったいない？
+Check out [the guides](https://sli.dev/builtin/components.html) for more.
 
-- Qiitaのスライドモード
-    - 正直いうと自由度が低い
-- 文字の拡大や配置を自由にしたい
-- アニメーションもつけたいな
+</div>
+<div>
 
----
+```html
+<Tweet id="1390115482657726468" />
+```
 
-#### 例
+<Tweet id="1390115482657726468" scale="0.65" />
 
-![スクリーンショット 2021-08-28 20.11.28.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/22706097-2718-7314-b93f-697eafca2f17.png)
+</div>
+</div>
 
----
-
-### 自分でスライドを実装したい
-
-![](https://4.bp.blogspot.com/-6nucQQvGF7M/WzC-BHQmAHI/AAAAAAABM90/mCILacrOAq8IqccOnH1U_umcAD56flJnQCLcBGAs/s800/yaruki_moeru_man.png)
 
 ---
-
-### 比較URL
-この記事を参考にあまり手を加えずに比較してみる
-
-|技術|URL|
-|:-:|:-:|
-|Qiita|[Qiitaスライド記事](https://qiita.com/naruqiita/items/78afe211b66c44894f5d)|
-|reveal.js|[ブログに付属させたサイト](https://naruhero-blog-slide.netlify.app/?entry_id=2JPpN7S7eEDa0KcVxsBI87)|
-|Slidev|url|
-
+class: px-20
 ---
 
-#### やりたかったこと
+# Themes
 
-**背景**
-個人ブログをNuxt ✖️ Contentful(マークダウン)で作っている
+Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
 
-- マークダウンで書けるスライドが欲しい
-- ContentfulのAPIを使って可変的なページでスライドを表示したい
+<div grid="~ cols-2 gap-2" m="-t-2">
 
-http://naruhero.site/
+```yaml
+---
+theme: default
+---
+```
+
+```yaml
+---
+theme: seriph
+---
+```
+
+<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
+
+<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
+
+</div>
+
+Read more about [How to use a theme](https://sli.dev/themes/use.html) and
+check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
 
 ---
-
-### Slidevでやってやりたかった
-
-<Tweet id="1430131406961659908"/>
-
+preload: false
 ---
 
-### [Slidev](https://sli.dev/)とは
+# Animations
 
-- 2021年5月に発表
-- マークダウンで書けるプレゼンテーションツール
-- `npm init slidev`だけで始められるオープンソース
-- devという名前が入っているように開発者向け
-- Vite、Vue3、WindiCSSで作られる
+Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
 
----
+```html
+<div
+  v-motion
+  :initial="{ x: -80 }"
+  :enter="{ x: 0 }">
+  Slidev
+</div>
+```
 
-### メリット
+<div class="w-60 relative mt-6">
+  <div class="relative w-40 h-40">
+    <img
+      v-motion
+      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-square.png"
+    />
+    <img
+      v-motion
+      :initial="{ y: 500, x: -100, scale: 2 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-circle.png"
+    />
+    <img
+      v-motion
+      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-triangle.png"
+    />
+  </div>
 
-- 1コマンドで雛形が作れ、編集すればプレゼン資料が完成する手頃さ
-- オンライン発表に合わせたプレゼンターモードやインカメラ機能など
-- 録画機能付きでアドリブが苦手な人にも優しい
+  <div 
+    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
+    v-motion
+    :initial="{ x: -80, opacity: 0}"
+    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
+    Slidev
+  </div>
+</div>
 
----
+<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
+<script setup lang="ts">
+const final = {
+  x: 0,
+  y: 0,
+  rotate: 0,
+  scale: 1,
+  transition: {
+    type: 'spring',
+    damping: 10,
+    stiffness: 20,
+    mass: 2
+  }
+}
+</script>
 
-### ビデオでの例
+<div
+  v-motion
+  :initial="{ x:35, y: 40, opacity: 0}"
+  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
 
-[![](https://img.youtube.com/vi/eW7v-2ZKZOU/0.jpg)](https://www.youtube.com/watch?v=eW7v-2ZKZOU)
+[Learn More](https://sli.dev/guide/animations.html#motion)
 
-詳しくは[こちら](https://zenn.dev/ryo_kawamata/articles/introduce-slidev)
-
----
-
-### 今回選ばなかった理由
-
-- 個人用カスタマイズ性が低い
-    - スライド1種類に対して1回buildが必要
-        - つまり変更があるたびにbuild必要
-    - `APIでデータ渡す→スライド表示`が難しい
-- サクッとつくれない（拘る場合）
-    - 開発期間3日ほどしかなかった
-    - リッチに作れるのが良いことだが作り込みが必要
-
----
-
-### 選ばれたのは`reveal.js`でした
-
-![Wvu5ArxeXuQ9LWk1630156982_1630157343.jpg](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/8bf2acdc-783a-be13-6eff-f0ae7f0150f5.jpeg)
-
----
-
-### [reveal.js](https://revealjs.com/)とは
-
-HTMLプレゼンテーションフレームワーク
-マークダウンでも対応をしている
-dependencyとして既存アプリにインストールして使える
-![revealjs.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/f4484e7b-abdd-0362-3bdb-da83d1362bb8.png)
-[参考](https://revealjs.com/installation/#installing-from-npm)
-
----
-
-### データ構成
-
-![データ構成.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/498701/e8d68e2b-80e6-6b22-2583-b4aac96b890e.gif)
-
----
-
-#### 悔しいポイント
-
-`ContentfulのMD(マークダウン)`→`reveal.jsのMD読み込み`はできなかった
-[参考](https://github.com/hakimel/reveal.js/blob/master/plugin/markdown/plugin.js#L37)
-
-`ContentfulのMD`→`VueでのMDをHTMLに変換`→`reveal.jsへ読み込み`
-この実装によりContentfulに内蔵されたHTMLの表示がバグる🤮
-
----
-
-#### 余談
-
-正直マークダウンに拘らなければ
-[Speaker Deck](https://speakerdeck.com/)も良い
-
-- パワポなどで作った資料をアップロードするだけ
-- SlideShareを使って簡単に埋め込みもできる
+</div>
 
 ---
 
-### 実際に見てみる
+# LaTeX
 
-http://naruhero.site/blog/6/
+LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
 
-※アップデートしていくため見た目が変わる可能性あり
+<br>
+
+Inline $\sqrt{3x-1}+(1+x)^2$
+
+Block
+$$
+\begin{array}{c}
+
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
+= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+
+\nabla \cdot \vec{\mathbf{B}} & = 0
+
+\end{array}
+$$
+
+<br>
+
+[Learn more](https://sli.dev/guide/syntax#latex)
 
 ---
 
-#### 補足
+# Diagrams
 
-- Slidevも作られたばかりで毎日のようにアップデートされている
-    - 今後の変更によってはbuildをしないようなAPI構成もありえるかも
-- Twitterの埋め込みなど対応していないことが少し目立つ
+You can create diagrams / graphs from textual descriptions, directly in your Markdown.
+
+<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
+
+```mermaid {scale: 0.9}
+sequenceDiagram
+    Alice->John: Hello John, how are you?
+    Note over Alice,John: A typical interaction
+```
+
+```mermaid {theme: 'neutral', scale: 0.8}
+graph TD
+B[Text] --> C{Decision}
+C -->|One| D[Result 1]
+C -->|Two| E[Result 2]
+```
+
+</div>
+
+[Learn More](https://sli.dev/guide/syntax.html#diagrams)
+
 
 ---
+layout: center
+class: text-center
+---
 
-## 結論
+# Learn More
 
-記事とスライド作成を手軽に作成したいなら[Qiita](https://qiita.com/Qiita/items/4ff5873776992f0511d6)
-マークダウンでリッチに書きたいだけなら[Slidev](https://sli.dev/)
-マークダウンで書いてカスタマイズもできるようにするなら[Reveal.js](https://revealjs.com/)
+[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
